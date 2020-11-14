@@ -1,7 +1,14 @@
 // Assignment code here
+var lowerChars = "abcdefghijklmnopqrstuvwxyz";
+var upperChars = "ABCDEFGHIJKLMNOPQRSTUZWXYZ";
+var numChars = "0123456789";
+var specialChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 
 function generatePassword() {
+  var newPass = "";
+  var chosenChars = "";
+
   passLength = prompt("How many characters long would you like your password to be?");
   while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     passLength = prompt("Please enter a number between 8 and 128");
@@ -14,6 +21,26 @@ function generatePassword() {
   var specChar = window.confirm("Include special characters?");
 
   console.log(lowerCase,upperCase,incNum,specChar);
+
+  if (lowerCase === false && upperCase === false && incNum === false && specChar=== false) {
+    alert("Selection must include at least one character type");
+    return "Try Again"
+  }
+
+  if (lowerCase){
+    chosenChars += lowerChars;
+  }
+  if (upperCase){
+    chosenChars += upperChars;
+  }
+  if (incNum){
+    chosenChars += numChars;
+  }
+  if (specChar){
+    chosenChars += specialChars;
+  }
+
+  console.log(chosenChars);
 
 }
 
