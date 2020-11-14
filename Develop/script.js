@@ -8,8 +8,12 @@ function generatePassword() {
   }
   console.log(passLength);
 
-  var lowerCase = window.confirm("Include lower case characters?")
-  
+  var lowerCase = window.confirm("Include lowercase characters?");
+  var upperCase = window.confirm("Include UPPERCASE characters?");
+  var incNum = window.confirm("Include numbers?");
+  var specChar = window.confirm("Include special characters?");
+
+  console.log(lowerCase,upperCase,incNum,specChar);
 
 }
 
