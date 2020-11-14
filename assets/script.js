@@ -13,14 +13,11 @@ function generatePassword() {
   while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
     passLength = prompt("Please enter a number between 8 and 128");
   }
-  console.log(passLength);
-
+  
   var lowerCase = window.confirm("Include lowercase characters?");
   var upperCase = window.confirm("Include UPPERCASE characters?");
   var incNum = window.confirm("Include numbers?");
   var specChar = window.confirm("Include special characters?");
-
-  console.log(lowerCase,upperCase,incNum,specChar);
 
   if (lowerCase === false && upperCase === false && incNum === false && specChar=== false) {
     alert("Selection must include at least one character type");
@@ -39,8 +36,6 @@ function generatePassword() {
   if (specChar){
     chosenChars += specialChars;
   }
-
-  console.log(chosenChars);
 
   for (var i = 0; i < passLength; i++) {
     newPass += chosenChars.charAt(Math.floor(Math.random() * chosenChars.length));
