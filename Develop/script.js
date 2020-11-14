@@ -1,6 +1,20 @@
 // Assignment code here
 
 
+function generatePassword() {
+  passLength = prompt("How many characters long would you like your password to be?");
+  while (passLength < 8 || passLength > 128 || isNaN(passLength)) {
+    passLength = prompt("Please enter a number between 8 and 128");
+  }
+  console.log(passLength);
+
+  var lowerCase = window.confirm("Include lower case characters?")
+  
+
+}
+
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
