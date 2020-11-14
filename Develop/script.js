@@ -42,6 +42,12 @@ function generatePassword() {
 
   console.log(chosenChars);
 
+  for (var i = 0; i < passLength; i++) {
+    newPass += chosenChars.charAt(Math.floor(Math.random() * chosenChars.length));
+  }
+
+  return newPass;
+
 }
 
 
